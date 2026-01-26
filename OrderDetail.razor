@@ -1,4 +1,4 @@
-@page "/myorders/{orderId}"
+@page "/myorders/{OrderId:int}"
 @inject NavigationManager NavigationManager
 @inject HttpClient HttpClient
 
@@ -12,12 +12,8 @@
     {
         <div class="track-order">
             <div class="track-order-title">
-                <h2>
-                    <text>Loading...</text>
-                </h2>
-                <p class="ml-auto mb-0">
-                    ...
-                </p>
+                <h2>Loading...</h2>
+                <p class="ml-auto mb-0">...</p>
             </div>
         </div>
     }
@@ -51,7 +47,7 @@
 </div>
 
 @code {
-    [Parameter] public int OrderId { get; set; }
+    [Parameter] public int OrderId { get; set; } // Keep as int
 
     OrderWithStatus orderWithStatus;
     bool invalidOrder = false;
